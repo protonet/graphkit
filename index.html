@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>Graphkit Example</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="raphael-min.js"></script>
+		<script type="text/javascript" src="graphkit.js"></script>
+	</head>
+	<body>
+		<div id="network" style="width:800px;height:600px;"></div>
+		<script type="text/javascript">
+			var NetworkGraph;
+			var ourInterval;
+			
+			$(function() {
+				if ($("network")) {
+					// make graph
+					NetworkGraph = new Graph("network", 50, false);
+					
+					// create some nodes
+					var sn = new Node(1, {name: "super", type: "supernode"});
+					
+					var n1 = new Node(2, {name: "n#1",   type: "node"});
+					var n2 = new Node(3, {name: "node#2",   type: "node"});
+					var n3 = new Node(4, {name: "node#3",   type: "node"});
+					var n4 = new Node(5, {name: "node#4",   type: "node"});
+					var n5 = new Node(6, {name: "node#5",   type: "node"});
+					var n6 = new Node(7, {name: "node#6",   type: "node"});
+					
+					var c1 = new Node(8,  {name: "client#1", type: "client"});
+					var c2 = new Node(9,  {name: "client#2", type: "client"});
+					var c3 = new Node(10, {name: "client#3", type: "client"});
+					var c4 = new Node(11, {name: "client#4", type: "client"});
+					var c5 = new Node(12, {name: "client#5", type: "client"});
+					
+					NetworkGraph.addNode(sn);
+					NetworkGraph.addNode(n1);
+					NetworkGraph.addNode(n2);
+					NetworkGraph.addNode(n3);
+					NetworkGraph.addNode(c1);
+					NetworkGraph.addNode(c2);
+					NetworkGraph.addNode(c3);
+					NetworkGraph.addNode(c4);
+					NetworkGraph.addNode(c5);
+					
+					// create some edges
+					NetworkGraph.addEdge(new Edge(sn, n1));
+					NetworkGraph.addEdge(new Edge(sn, n2));
+					NetworkGraph.addEdge(new Edge(sn, n3));
+
+					NetworkGraph.addEdge(new Edge(n1, n2));
+					NetworkGraph.addEdge(new Edge(n2, n3));
+					
+					NetworkGraph.addEdge(new Edge(n1, c1));
+					NetworkGraph.addEdge(new Edge(n1, c2));
+					NetworkGraph.addEdge(new Edge(n1, c3));
+					NetworkGraph.addEdge(new Edge(n1, c4));
+					NetworkGraph.addEdge(new Edge(n1, c5));
+					
+					ourInterval = setInterval("NetworkGraph.render()", 100);
+				}
+			});
+		</script>
+	</body>
+</html>
