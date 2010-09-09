@@ -17,20 +17,20 @@
 					NetworkGraph = new Graph("network", 50, false);
 					
 					// create some nodes
-					var sn = new Node(1, {name: "super", type: "supernode"});
+					var sn = new Node({id:12, name: "super", type: "supernode"});
 					
-					var n1 = new Node(2, {name: "n#1",   type: "node"});
-					var n2 = new Node(3, {name: "node#2",   type: "node"});
-					var n3 = new Node(4, {name: "node#3",   type: "node"});
-					var n4 = new Node(5, {name: "node#4",   type: "node"});
-					var n5 = new Node(6, {name: "node#5",   type: "node"});
-					var n6 = new Node(7, {name: "node#6",   type: "node"});
+					var n1 = new Node({id:1, name: "n#1",   type: "node"});
+					var n2 = new Node({id:2, name: "node#2",   type: "node"});
+					var n3 = new Node({id:3, name: "node#3",   type: "node"});
+					var n4 = new Node({id:4, name: "node#4",   type: "node"});
+					var n5 = new Node({id:5, name: "node#5",   type: "node"});
+					var n6 = new Node({id:6, name: "node#6",   type: "node"});
 					
-					var c1 = new Node(8,  {name: "client#1", type: "client"});
-					var c2 = new Node(9,  {name: "client#2", type: "client"});
-					var c3 = new Node(10, {name: "client#3", type: "client"});
-					var c4 = new Node(11, {name: "client#4", type: "client"});
-					var c5 = new Node(12, {name: "client#5", type: "client"});
+					var c1 = new Node({id:7, name: "client#1", type: "client"});
+					var c2 = new Node({id:8, name: "client#2", type: "client"});
+					var c3 = new Node({id:9, name: "client#3", type: "client"});
+					var c4 = new Node({id:10, name: "client#4", type: "client"});
+					var c5 = new Node({id:11, name: "client#5", type: "client"});
 					
 					NetworkGraph.addNode(sn);
 					NetworkGraph.addNode(n1);
